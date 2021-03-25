@@ -8,26 +8,41 @@
     <title>Book add</title>
 </head>
 <body>
+<div align="center">
+    <h2>Dodaj nową książkę</h2>
 <form:form method="post"
            modelAttribute="book">
-
-    Author: <form:input path="author"/>
-    <form:errors path="author"/><br/>
-
-    ISBN: <form:input path="isbn"/>
-    <form:errors path="isbn"/><br/>
-
-    Wydawca: <form:input path="publisher"/>
-    <form:errors path="publisher"/><br/>
-
-    Tytuł: <form:input path="title"/>
-    <form:errors path="title"/><br/>
-
-    Rodzaj: <form:input path="type"/>
-    <form:errors path="type"/><br/>
-
-    <input type="submit" value="Zapisz">
+    <table border="0" cellpadding="5">
+        <tr>
+            <td>Author:</td>
+            <td><form:input path="author"/></td>
+            <form:errors path="author"/><br/>
+        </tr>
+        <tr>
+            <td>ISBN:</td>
+            <td><form:input path="isbn"/></td>
+            <form:errors path="isbn"/><br/>
+        </tr>
+        <tr>
+            <td>Wydawca:</td>
+            <td><form:input path="publisher"/></td>
+            <form:errors path="publisher"/><br/>
+        </tr>
+        <tr>
+            <td>Tytuł:</td>
+            <td><form:input path="title"/></td>
+            <form:errors path="title"/><br/>
+        </tr>
+        <tr>
+            <td>Kategoria:</td>
+            <td><form:input path="type"/></td>
+            <form:errors path="type"/><br/>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Zapisz"/></td>
+        </tr>
+    </table>
 </form:form>
-
+</div>
 </body>
 </html>
