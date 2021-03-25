@@ -22,11 +22,10 @@ public class ManageBookController {
     }
 
     @GetMapping("/all")
-    @ResponseBody
     public String showPosts(Model model) {
         List<Book> books = jpaBookService.getBooks();
         model.addAttribute("books", books);
-        return String.valueOf(books);
+        return "/books/all";
     }
 
 }
