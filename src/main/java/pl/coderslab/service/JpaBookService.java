@@ -21,7 +21,7 @@ public class JpaBookService implements BookService{
 
     @Override
     public List<Book> getBooks() {
-        return null;
+        return bookRepository.findAll();
     }
 
     @Override

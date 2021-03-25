@@ -10,7 +10,9 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleContextResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import javax.persistence.EntityManagerFactory;
@@ -22,7 +24,7 @@ import java.util.Locale;
 @ComponentScan(basePackages = "pl.coderslab")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "pl.coderslab.repository")
-public class AppConfig {
+public class AppConfig implements WebMvcConfigurer {
 
     @Bean(name="entityManagerFactory")
     public LocalEntityManagerFactoryBean entityManagerFactoryBean(){
@@ -49,6 +51,12 @@ public class AppConfig {
     @Bean
     public Validator validator() {
         return new LocalValidatorFactoryBean();
+    }
+
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
     }
 
 }
