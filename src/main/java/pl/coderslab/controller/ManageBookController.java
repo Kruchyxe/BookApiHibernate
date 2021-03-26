@@ -2,10 +2,7 @@ package pl.coderslab.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Book;
 import pl.coderslab.service.JpaBookService;
 
@@ -41,13 +38,10 @@ public class ManageBookController {
         return "redirect:/admin/books/all";
     }
 
-
-
-
-
-
-
-
-
+    @GetMapping("/delete/{id}")
+    public String removeBook(Model model, @PathVariable long id){
+        jpaBookService.delete(id);
+        return "redirect:/admin/books/all";
+    }
 
 }
