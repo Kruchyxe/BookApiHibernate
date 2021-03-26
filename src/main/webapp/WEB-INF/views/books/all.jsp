@@ -24,7 +24,7 @@
             <td><c:out value="${book.type}"/></td>
         </tr>
     </c:forEach>
-<%--    <span class="border border-primary"></span>--%>
+
     </tbody>
 
 </table>

@@ -16,27 +16,22 @@
     <tr>
         <td>Author:</td>
         <td><form:input path="author" placeholder="Wpisz autora"/></td>
-
     </tr>
     <tr>
         <td>ISBN:</td>
         <td><form:input path="isbn" placeholder="Wpisz nr ISBN"/></td>
-
     </tr>
     <tr>
         <td>Wydawca:</td>
         <td><form:input path="publisher" placeholder="Wpisz wydawcę"/></td>
-
     </tr>
     <tr>
         <td>Tytuł:</td>
         <td><form:input path="title" placeholder="Wpisz tytuł"/></td>
-
     </tr>
     <tr>
         <td>Kategoria:</td>
         <td><form:input path="type" placeholder="Wpisz kategorie"/></td>
-
     </tr>
     <tr>
         <td colspan="2"><input type="submit" value="Zapisz"/></td>

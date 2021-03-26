@@ -62,7 +62,6 @@ public class AppConfig implements WebMvcConfigurer {
     }
 
     @Bean
-
     public ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver =
                 new InternalResourceViewResolver();
