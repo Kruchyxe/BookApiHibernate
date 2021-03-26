@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Book;
 import pl.coderslab.service.JpaBookService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Controller
@@ -25,7 +26,6 @@ public class ManageBookController {
         return "/books/all";
     }
 
-
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("book", new Book());
@@ -42,6 +42,12 @@ public class ManageBookController {
     public String removeBook(Model model, @PathVariable long id){
         jpaBookService.delete(id);
         return "redirect:/admin/books/all";
+    }
+
+    @GetMapping("/show/{id}")
+    public String showBook(Model model, @PathVariable long id) {
+        model.addAttribute("book", jpaBookService.get(id).orElseThrow(EntityNotFoundException::new));
+        return "books/details";
     }
 
 }

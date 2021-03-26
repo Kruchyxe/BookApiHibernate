@@ -3,7 +3,7 @@
 <link rel="stylesheet" href='<c:url value="/theme/css/bootstrap.min.css" />' />
 <html>
 <head>
-    <title>Book List</title>
+    <title>Szczegóły książki</title>
 </head>
 <body>
 <table class="table table-hover">
@@ -12,25 +12,22 @@
     <tr>
         <th scope="col">Tytuł</th>
         <th scope="col">Autor</th>
+        <th scope="col">Isbn</th>
         <th scope="col">Kategoria</th>
+        <th scope="col">Wydawca</th>
     </tr>
     </thead>
-
     <tbody>
-    <c:forEach items="${books}" var="book">
         <tr>
             <td><c:out value="${book.title}"/></td>
             <td><c:out value="${book.author}"/></td>
+            <td><c:out value="${book.isbn}"/></td>
             <td><c:out value="${book.type}"/></td>
+            <td><c:out value="${book.publisher}"/></td>
         </tr>
-    </c:forEach>
-<%--    <span class="border border-primary"></span>--%>
     </tbody>
-
 </table>
 
 </table>
 </body>
 </html>
-
-
