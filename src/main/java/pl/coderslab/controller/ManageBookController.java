@@ -46,7 +46,7 @@ public class ManageBookController {
         return "redirect:/admin/books/all";
     }
 
-    @GetMapping("/show/{id}")
+    @GetMapping("/details/{id}")
     public String detailsBook(Model model, @PathVariable long id) {
         model.addAttribute("book", jpaBookService.get(id).orElseThrow(EntityNotFoundException::new));
         return "books/details";
